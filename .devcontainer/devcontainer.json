@@ -1,0 +1,13 @@
+{
+  "name": "python",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "streamlit",
+  "workspaceFolder": "/src",
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "ms-python.python"
+          ]
+      }
+  }
+}

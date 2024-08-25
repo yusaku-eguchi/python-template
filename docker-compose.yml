@@ -1,0 +1,46 @@
+version: '3'
+services:
+  python:
+    build:
+      context: .
+      dockerfile: docker/python/Dockerfile
+    volumes:
+      - .:/src
+    tty: true
+    environment:
+      TZ: Asia/Tokyo
+      OPENAI_API_KEY: '${OPENAI_API_KEY}'
+      AZURE_AI_SEARCH_ENDPOINT: '${AZURE_AI_SEARCH_ENDPOINT}'
+      AZURE_AI_SEARCH_KEY: '${AZURE_AI_SEARCH_KEY}'
+    depends_on:
+      - db
+  
+#   db:
+#     image: mysql:8.0
+#     environment:
+#       MYSQL_ROOT_PASSWORD: password
+#       MYSQL_DATABASE: youtube_survey
+#       MYSQL_USER: youtube_survey
+#       MYSQL_PASSWORD: password
+#       TZ: 'Asia/Tokyo'
+#     command: >
+#       mysqld --default-authentication-plugin=mysql_native_password
+#     platform: linux/x86_64
+#     volumes:
+#       - db-data:/var/lib/mysql
+
+#   phpmyadmin:
+#     image: phpmyadmin/phpmyadmin:5.2
+#     environment:
+#       PMA_HOST: 'db'
+#       PMA_USER: 'youtube_survey'
+#       PMA_PASSWORD: 'password'
+#     ports:
+#       - '${PHP_MY_ADMIN_PORT:-8888}:80'
+#     depends_on:
+#       - db
+
+# volumes:
+#   db-data:
+#     driver: local
+    
