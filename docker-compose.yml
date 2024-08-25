@@ -12,8 +12,8 @@ services:
       OPENAI_API_KEY: '${OPENAI_API_KEY}'
       AZURE_AI_SEARCH_ENDPOINT: '${AZURE_AI_SEARCH_ENDPOINT}'
       AZURE_AI_SEARCH_KEY: '${AZURE_AI_SEARCH_KEY}'
-    depends_on:
-      - db
+    # depends_on:
+    #   - db
   
 #   db:
 #     image: mysql:8.0
