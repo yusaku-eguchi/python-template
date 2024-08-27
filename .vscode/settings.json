@@ -5,9 +5,13 @@
     "[python]": {
         "diffEditor.ignoreTrimWhitespace": false,
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
     },
     "black-formatter.args": [
         "--line-length=100"
-    ]
+    ],
+    "isort.args":["--profile", "black"],
 }

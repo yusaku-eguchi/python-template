@@ -9,7 +9,8 @@
             // "ms-toolsai.jupyter",
             "ms-python.python",
             "ms-python.flake8",
-            "ms-python.black-formatter"
+            "ms-python.black-formatter",
+            "ms-python.isort"
           ]
       }
   }
